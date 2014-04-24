@@ -24,7 +24,6 @@ You will want to use all the Ruby tools for implementing object-oriented program
 * Instance methods and class methods to define object behavior
 * Private methods where appropriate
 * Class inheritance
-* Creating an application namespace
 
 ## Sample User Stories
 
@@ -66,9 +65,8 @@ These stories are only examples and are not listed in any particular order. You 
 
 * **(3)** Completion of car-related functionality (viewing, adding, value calculations, etc.)
 * **(2)** Completion of damages-related functionality (viewing, adding, affecting car value, etc.)
+* **(2)** Appropriate use of class methods, private methods, and inheritance
 * **(1)** Documentation and use of User Stories
-* **(1)** Appropriate use of class methods, instance methods, and private methods
-* **(1)** Appropriate use of inheritance and namespacing
 * **(1)** Repository has several logical commits with descriptive messages
 * **(1)** Code uses correct indentation/style and descriptive names for classes, methods, and variables
 
