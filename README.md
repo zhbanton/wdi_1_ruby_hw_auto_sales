@@ -12,7 +12,7 @@ A Used Car Lot manager can use the application to see the value of each car on t
 
 The application user, Lot Manager, will be able to set a _adjustment price_ on each car. This will allow the user to vary the cost of the car. It will typically represent the profit margin but it could be negative if the user so determines.
 
-You will create a set of _User Stories_ that will determine this app's features. The User Stories will be saved in a file named "user_stories.txt". They should be ordered by priority. Each completed story should be prefixed with __(DONE)__.
+You will create a set of _User Stories_ that will determine this app's features. The User Stories will be saved in a file named "user_stories.txt". They should be ordered by priority. Each completed story should be prefixed with __(DONE)__. Feel free to add as many stories as you can dream up, that may be implemented in the future.
 
 You can _either_ manually input each car, with it's attributes and damages, _OR_ you can create a populate _class method_ on the Auto Lot class_
 
@@ -55,3 +55,16 @@ You will want to use all the Ruby tools for implementing a OO programs.
 * It should have description.
 * It should have a damage cost, _how much to repair the damage_.
 * It should have dollar value representing how much a repair for this type of damage will be substracted from the car price.
+
+## Grading
+
+* **(5)** Completion of the functionality described above using Ruby's OO tools.
+* **(1)** Correct use of User Stories as described above.
+* **(1)** Correct use of Inheritance and Class variables/methods.
+* **(1)** Use of Mixin/s and Namespaces.
+* **(1)** Repository has several logical commits with descriptive messages
+* **(1)** Code uses correct indentation/style and descriptive class, variable and method names
+
+## Bonuses
+
+* **(1)** Allow damages to factor into the cost of the cars. These are marked as _(optional)_ above.
