@@ -48,11 +48,12 @@ These stories are only examples and are not listed in any particular order. You 
 * has a make, model, and year
 * has a unique vehicle ID number (each new car has an ID one higher than the last)
 * has an initial price (MSRP when the car was new)
+* has a date of manufacture
 * has a depreciation rate (how much the value decreases each year)
 
 ### Used Car
 * has the same attributes as a new car
-* has an age (number of years since manufacture)
+* has a mileage
 * may have one or more damages
 
 ### Damage
