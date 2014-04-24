@@ -28,6 +28,8 @@ You will want to use all the Ruby tools for implementing object-oriented program
 
 ## Sample User Stories
 
+These stories are only examples and are not listed in any particular order. You may want to add more to flesh out the functionality of your app, or modify/split these to make them more specific.
+
 * User can see the price of a specific car.
 * User can the total price of all cars on the lot (the "lot value").
 * User can see the total number of cars on the lot.
@@ -40,7 +42,7 @@ You will want to use all the Ruby tools for implementing object-oriented program
 
 ### Car Lot
 * has a name
-* has the behaviors determined by the User Stories
+* implements the top-level behaviors specified by the User Stories
 
 ### Car
 * has a make, model, and year
@@ -57,7 +59,7 @@ You will want to use all the Ruby tools for implementing object-oriented program
 * has a description
 * has a cost (how much it would cost to repair)
 * *(bonus)* has a flag indicating whether this damage has been repaired
-* *(bonus)* has a "car value penalty" (amount that this damage will subtract from the car's value once repaired)
+* *(bonus)* has a "value penalty" (amount this damage subtracts from the car's value, even if repaired)
 
 ## Grading
 
@@ -71,4 +73,4 @@ You will want to use all the Ruby tools for implementing object-oriented program
 
 ## Bonuses
 
-* **(1)** That'll bump right out! Add the bullet points listed as *(bonus)* above and allow damages to be marked as "repaired". A repaired damage does not subtract its repair cost from the car's value &ndash; it instead subtracts its "car value penalty".
+* **(1)** That'll bump right out! Add the bullet points listed as *(bonus)* above and allow damages to be marked as repaired. If a damage is not repaired, it subtracts **both** its repair cost **and** its "value penalty" from the car's value. If a damage is repaired, only the "value penalty" is subtracted.
