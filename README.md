@@ -44,10 +44,9 @@ These stories are only examples and are not listed in any particular order. You 
 * implements the top-level behaviors specified by the User Stories
 
 ### Car
-* has a make, model, and year
+* has a make, model, and year of manufacture
 * has a unique vehicle ID number (each new car has an ID one higher than the last)
 * has an initial price (MSRP when the car was new)
-* has a date of manufacture
 * has a depreciation rate (how much the value decreases each year)
 
 ### Used Car
