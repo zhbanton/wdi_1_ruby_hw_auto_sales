@@ -24,7 +24,6 @@ You will want to use all the Ruby tools for implementing object-oriented program
 * Instance methods and class methods to define object behavior
 * Private methods where appropriate
 * Class inheritance
-* Mixing in modules
 * Creating an application namespace
 
 ## Sample User Stories
@@ -45,7 +44,7 @@ You will want to use all the Ruby tools for implementing object-oriented program
 
 ### Car
 * has a make, model, and year
-* has a vehicle identification number (VIN)
+* has a unique vehicle ID number (each new car has an ID one higher than the last)
 * has an initial price (MSRP when the car was new)
 * has a depreciation rate (how much the value decreases each year)
 
@@ -66,7 +65,7 @@ You will want to use all the Ruby tools for implementing object-oriented program
 * **(2)** Completion of damages-related functionality (viewing, adding, affecting car value, etc.)
 * **(1)** Documentation and use of User Stories
 * **(1)** Appropriate use of class methods, instance methods, and private methods
-* **(1)** Appropriate use of inheritance, mixins, and namespacing
+* **(1)** Appropriate use of inheritance and namespacing
 * **(1)** Repository has several logical commits with descriptive messages
 * **(1)** Code uses correct indentation/style and descriptive names for classes, methods, and variables
 
