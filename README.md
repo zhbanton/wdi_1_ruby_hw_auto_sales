@@ -1,70 +1,73 @@
-# Used Auto Sales.
+# Honest Tom's Dealership
 
-We are going to create a Command Line Application (CLI) application that will allow a Used Car Lot the ability to manage it's cars.
+*"...and if you sign today, we'll throw in an extended warranty!"*
 
-A Used Car Lot manager can use the application to see the value of each car on the lot. Each car's current price, value, will be calculated by subtracting the below from the car's initial price, _MSRP of the car when it was new_.
+We are going to create a terminal-based application that will allow the manager of a used car lot to keep track of their cars.
 
-* Yearly depreciation.
-* Cost reduction based on the car mileage.
-* Cost of all the car's current damages. _(optional)_
-* Cost reduction for all past damages that have been fixed. _The fact that the car was damaged, but fixed, will reduce the price of the car._ _(optional)_
+The manager can use the application to see the value of each car on the lot. Each car's current price, or value, will be calculated by subtracting the below from the car's initial price (MSRP of the car when it was new).
 
+* Yearly depreciation
+* Cost reduction based on mileage
+* Amount that the car's current damages would cost to fix
+* *(bonus)* Cost reduction for fixed damages
 
-The application user, Lot Manager, will be able to set a _adjustment price_ on each car. This will allow the user to vary the cost of the car. It will typically represent the profit margin but it could be negative if the user so determines.
+The user of the application will also be able to set a *price adjustment* on each car to vary the cost of cars. This will typically represent the profit margin but it could be negative if the user so desires.
 
-You will create a set of _User Stories_ that will determine this app's features. The User Stories will be saved in a file named "user_stories.txt". They should be ordered by priority. Each completed story should be prefixed with __(DONE)__. Feel free to add as many stories as you can dream up, that may be implemented in the future.
+You will create a set of *User Stories* that will determine this app's features. The User Stories will be saved in a file named `user_stories.txt`. They should be ordered by priority. Each completed story should be prefixed with **(DONE)**. Feel free to add as many stories as you can dream up that may be implemented in the future.
 
-You can _either_ manually input each car, with it's attributes and damages, _OR_ you can create a populate _class method_ on the Auto Lot class_
+We strongly recommend pre-populating the lot with a variety of damaged and undamaged cars at the start of your program, before prompting the user for an action. This will avoid having to re-enter the data every time you want to test something.
 
-Suggest you create this populate method, otherwise it will may be very tedious to populate the Lot.
+You will want to use all the Ruby tools for implementing object-oriented programs:
 
-You will want to use all the Ruby tools for implementing a OO programs.
-  
 * Classes
-* Getters/Setters. (Miminize access to internal attributes.)
-* Private methods.
-* Define an Entity's behavior by defining Instance and Class methods.
-* Class Inheritence.
-* Mixin/s implemented with Modules.
-* Create an Application namespace.
+* Getters and setters (minimize direct access to internal attributes)
+* Instance methods and class methods to define object behavior
+* Private methods where appropriate
+* Class inheritance
+* Mixing in modules
+* Creating an application namespace
 
-### Sample User Stories.
+## Sample User Stories
 
-* Users can see the price of a specific car.
-* Users can the total price, lot value, for all cars in the lot.
-* Users can add cars to the lot.
-* Users can adjust the price of a car on a lot.
-* Users can see the total number of cars in the lot.
-* Users can search for cars by make, model or year.
+* User can see the price of a specific car.
+* User can the total price of all cars on the lot (the "lot value").
+* User can see the total number of cars on the lot.
+* User can add cars to the lot.
+* User can add damages to cars on the lot.
+* User can set price adjustments on cars.
+* User can search for cars by make, model, or year.
 
-### Sample Entities (Classes)
+## Sample Classes
 
-### Auto Lot
-* It should have a name.
-* It should have the behaviors determined by the User Stories.
+### Car Lot
+* has a name
+* has the behaviors determined by the User Stories
 
-#### Car
-* It should have a make, model and year.
-* Each car will have a vehical ID, VID.
-* It should have a initial price. _Cost of the car when new, MSRP._
-* It should have a depreciation rate. How does price each year.
-* It may have a set of damages.
+### Car
+* has a make, model, and year
+* has a vehicle identification number (VIN)
+* has an initial price (MSRP when the car was new)
+* has a depreciation rate (how much the value decreases each year)
 
+### Used Car
+* has the same attributes as a new car
+* has an age (number of years since manufacture)
+* may have one or more damages
 
-#### Damage
-* It should have description.
-* It should have a damage cost, _how much to repair the damage_.
-* It should have dollar value representing how much a repair for this type of damage will be substracted from the car price.
+### Damage
+* has a description
+* has a cost (how much it would cost to repair)
+* *(bonus)* has a flag indicating whether this damage has been repaired
+* *(bonus)* has a "car value penalty" (amount that this damage will subtract from the car's value once repaired)
 
 ## Grading
 
-* **(5)** Completion of the functionality described above using Ruby's OO tools.
-* **(1)** Correct use of User Stories as described above.
-* **(1)** Correct use of Inheritance and Class variables/methods.
-* **(1)** Use of Mixin/s and Namespaces.
+* **(6)** Completion of the functionality described above using Ruby's OO tools
+* **(1)** Documentation and use of User Stories
+* **(1)** Appropriate use of inheritance, mixins, and namespacing
 * **(1)** Repository has several logical commits with descriptive messages
-* **(1)** Code uses correct indentation/style and descriptive class, variable and method names
+* **(1)** Code uses correct indentation/style and descriptive names for classes, methods, and variables
 
 ## Bonuses
 
-* **(1)** Allow damages to factor into the cost of the cars. These are marked as _(optional)_ above.
+* **(1)** That'll bump right out! Add the bullet points listed as *(bonus)* above and allow damages to be marked as "repaired". A repaired damage does not subtract its repair cost from the car's value &ndash; it instead subtracts its "car value penalty".
