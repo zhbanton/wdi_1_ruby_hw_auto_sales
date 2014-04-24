@@ -62,8 +62,10 @@ You will want to use all the Ruby tools for implementing object-oriented program
 
 ## Grading
 
-* **(6)** Completion of the functionality described above using Ruby's OO tools
+* **(3)** Completion of car-related functionality (viewing, adding, value calculations, etc.)
+* **(2)** Completion of damages-related functionality (viewing, adding, affecting car value, etc.)
 * **(1)** Documentation and use of User Stories
+* **(1)** Appropriate use of class methods, instance methods, and private methods
 * **(1)** Appropriate use of inheritance, mixins, and namespacing
 * **(1)** Repository has several logical commits with descriptive messages
 * **(1)** Code uses correct indentation/style and descriptive names for classes, methods, and variables
