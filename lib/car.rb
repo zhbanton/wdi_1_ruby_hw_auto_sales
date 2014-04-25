@@ -1,3 +1,5 @@
+require 'date'
+
 class Car
 
   attr_reader :make, :model, :year

@@ -1,0 +1,25 @@
+(Done) Create a CarLot
+* name read only (ro) attributes
+
+(Done) Create a Car
+* make, model, year (ro) attributes
+
+(Done) Show a Car's age
+
+(Done)Create a Used Car, subclass of Car
+* msrp read only attribute.
+* mileage rw attribute.
+
+(Done) Calculate the Used Car Depreciation based on mileage
+  The cost of mileage is 1% of the MSRP for every 10K miles
+
+(Done) Calculate the Used Car Depreciation based on age
+  The price should be reduced by 5% every year.
+
+The price of the car should be determined by the depreciation from age and mileage
+Add used cars to the lot
+Show all the cars on the lot.
+Find the total value of all cars on lot
+Add a car to the lot.
+Modify the mileage of a car
+Adjust the price of a car.

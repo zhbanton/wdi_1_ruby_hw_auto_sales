@@ -6,7 +6,7 @@ class UsedCar < Car
   MILEAGE_DEPR_RATIO = 0.01
 
   # Percent of price  the car depreciates in one year.
-  DEPR_RATIO = 0.05
+  YRLY_DEPR_RATIO = 0.05
 
   attr_reader :msrp, :mileage
 
@@ -16,21 +16,20 @@ class UsedCar < Car
     @mileage = mileage
   end
 
-  def depreciation
-    msrp - price
-  end
-
   def price
-    current_price = @price
-    age.times do
-      current_price -= current_price*DEPR_RATIO
-    end
-
-    current_price -= current_price*mileage_cost
-    current_price
+    (msrp - age_depr - mileage_depr).round
   end
 
-  def mileage_cost
-    mileage/10_000*MILEAGE_DEPR_RATIO
+  def age_depr
+    age_cost = @price
+    calc_price = @price
+    age.times do
+      calc_price -= (calc_price * YRLY_DEPR_RATIO)
+    end
+    (@price - calc_price).round
+  end
+
+  def mileage_depr
+    depr = @price * ((mileage/10_000)  * MILEAGE_DEPR_RATIO)
   end
 end
