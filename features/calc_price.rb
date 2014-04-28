@@ -12,6 +12,11 @@ correct = (9_400 == car.price)
 msg = "Price is " + (correct ? "CORRECT" : "WRONG")
 puts "#{msg}\n\n"
 
+# Call price twice, it shouldn't change
+correct = (9_400 == car.price)
+msg = "Price is " + (correct ? "CORRECT" : "WRONG")
+puts "#{msg}\n\n"
+
 car = UsedCar.new("Ford", "Escort", 2012, 10_000, 30_000)
 puts "Created Used Car #{car.year} #{car.make} #{car.model}"
 puts "mileage is #{car.mileage}"
@@ -34,6 +39,6 @@ puts "Age Depreciation = #{car.age_depr}"
 puts "Mileage Depreciation = #{car.mileage_depr}"
 puts "Price = #{car.price}"
 
-correct = ( 992 == car.price)
+correct = ( 0 == car.price)
 msg = "Price is " + (correct ? "CORRECT" : "WRONG")
 puts "#{msg}\n\n"

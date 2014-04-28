@@ -9,15 +9,19 @@ class UsedCar < Car
   YRLY_DEPR_RATIO = 0.05
 
   attr_reader :msrp, :mileage
+  attr_accessor :adjustment
 
   def initialize(make, model, year, msrp, mileage)
     super(make, model, year)
     @price = @msrp = msrp
     @mileage = mileage
+    @adjustment = 0
   end
 
   def price
-    (msrp - age_depr - mileage_depr).round
+    new_price = (msrp - age_depr - mileage_depr + adjustment).round
+    new_price = 0 if new_price < 0
+    new_price
   end
 
   def age_depr
@@ -32,4 +36,10 @@ class UsedCar < Car
   def mileage_depr
     depr = @price * ((mileage/10_000)  * MILEAGE_DEPR_RATIO)
   end
+
+  # def adjust_price(adjustment)
+  #   price = @price = adjustment
+  #   self.price = 0 if @price < 0
+  #   self.price
+  # end
 end
