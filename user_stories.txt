@@ -23,9 +23,9 @@
 (Done) Adjust the price of a car.
 * price_adjustment rw attr
 
-Add used cars to the lot.
+(Done) Add used cars to the lot.
 
-Show all the cars on the lot.
+(Done) Show all the cars on the lot.
 
 Find the total value of all cars on lot
 

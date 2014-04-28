@@ -37,9 +37,7 @@ class UsedCar < Car
     depr = @price * ((mileage/10_000)  * MILEAGE_DEPR_RATIO)
   end
 
-  # def adjust_price(adjustment)
-  #   price = @price = adjustment
-  #   self.price = 0 if @price < 0
-  #   self.price
-  # end
+  def to_s
+    super + ", mileage = #{self.mileage}, price = #{price}"
+  end
 end

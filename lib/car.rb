@@ -14,4 +14,7 @@ class Car
     Date.today.year - year
   end
 
+  def to_s
+    "#{year} #{make} #{model}"
+  end
 end
