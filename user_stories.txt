@@ -20,7 +20,7 @@
 (Done) Calculate the price of the car based on depreciation.
   Should be determined by the depreciation from age and mileage
 
-Adjust the price of a car.
+(Done) Adjust the price of a car.
 * price_adjustment rw attr
 
 Add used cars to the lot.
