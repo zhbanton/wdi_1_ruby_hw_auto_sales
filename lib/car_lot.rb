@@ -12,4 +12,10 @@ class CarLot
     @cars = cars
   end
 
+  def lot_value
+    value = 0
+    @cars.each { |car| value += car.price }
+    value
+  end
+
 end

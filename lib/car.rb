@@ -10,6 +10,8 @@ class Car
 
 DEPRECIATION = 0.05
 
+attr_reader :make, :model, :year
+
   def initialize (make, model, year, msrp, markup: 0)
     @make = make
     @model = model

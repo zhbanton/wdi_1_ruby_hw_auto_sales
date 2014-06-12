@@ -21,7 +21,7 @@ class UsedCar < Car
 
   def value
     damage_cost = 0
-    @damages.each { |damage| damage_cost += damage.cost }
+    @damages.each { |damage| damage_cost += damage.cost } if @damages != nil
     super - (MILEAGE_DEPRECIATION * @mileage) - damage_cost
   end
 end

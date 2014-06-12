@@ -10,3 +10,6 @@ cars = [ UsedCar.new("Toyota", "Highlander", 2006, 35000, 100050, damages: [Dama
 lot = CarLot.new("Zack's Lot", cars)
 
 puts lot.inspect
+
+
+puts lot.lot_value
