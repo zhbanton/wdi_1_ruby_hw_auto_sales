@@ -10,7 +10,6 @@ class Car
 
 DEPRECIATION = 0.05
 
-
   def initialize (make, model, year, msrp, markup: 0)
     @make = make
     @model = model
@@ -18,6 +17,19 @@ DEPRECIATION = 0.05
     @msrp = msrp
     @markup = markup
   end
+
+  def purchase_price
+    @msrp + @markup
+  end
+
+  def value
+    current_value = purchase_price
+    (Date.today.year - @year).times do
+      current_value -= current_value * DEPRECIATION
+    end
+    current_value
+  end
+
 
 end
 
