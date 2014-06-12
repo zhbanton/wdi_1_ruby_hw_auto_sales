@@ -18,4 +18,12 @@ class CarLot
     value
   end
 
+  def find_by_all(make: nil, model: nil, year: nil)
+    @cars.find_all { |car| (!make || car.make.casecmp(make) == 0) && (!model || car.model.casecmp(model) == 0) && (!year || car.year.to_s.casecmp(year) == 0) }
+  end
+
+  def find_by_any(make: nil, model: nil, year: nil)
+    @cars.find_all { |car| (!make || car.make.casecmp(make) == 0) || (!model || car.model.casecmp(model) == 0) || (!year || car.year.to_s.casecmp(year) == 0) }
+  end
+
 end
