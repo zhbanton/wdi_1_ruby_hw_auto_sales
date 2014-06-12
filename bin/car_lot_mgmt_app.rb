@@ -6,52 +6,35 @@ lot_name = "Honest Toms"
 
 lot = CarLot.new(lot_name)
 
-puts "lot  is #{lot.inspect}"
-# make, model, year, msrp, mileage)
-car = UsedCar.new("Ford", "Mustang",2010, 30_000, 50_000)
-lot.add_car(car)
-puts "Added car #{car.year}  #{car.model} to the lot"
+puts "lot  is #{lot.name}"
 
-car = UsedCar.new("Toyota", "Camry",2009, 20_000, 100_000)
-lot.add_car(car)
-puts "Added car #{car.year}  #{car.model} to the lot"
+car_makes = %w{ Ford Toyota Chevy}
+car_models = {
+  "Ford" => %w{ Pinto Escort Mustang},
+  "Toyota" => %w{ Camry Lexus Corolla RAV4 },
+  "Chevy" => %w{ Silverado Nova Cruise }
+}
+models_msrp = {
+  "Pinto" => 4_000,
+  "Escort" => 15_000,
+  "Mustang" => 30_000,
+  "Camry" => 25_000,
+  'Lexus' => 30_000,
+  'Corolla' => 17_000,
+  'RAV4' => 19_000
+}
 
-car = UsedCar.new("Toyota", "Lexus",2012, 35_000, 10_000)
-lot.add_car(car)
-puts "Added car #{car.year}  #{car.model} to the lot"
+55.times do |i|
 
-car = UsedCar.new("Ford", "F150",2010, 25_000, 60_000)
-lot.add_car(car)
-puts "Added car #{car.year}  #{car.model} to the lot"
+  year = rand(1990..2013)
+  make = car_makes.sample
+  model = car_models[make].sample
+  msrp = models_msrp[model]
+  mileage = (500..40_000)
+  car = UsedCar.new(make, model, year, msrp, mileage )
+  lot.add_car(car) 
 
-exit
-def show_help
-  puts "showing help"
 end
 
-def update_user
-  puts "updating user"
-end
+puts "Car Lot has #{lot.get_cars.length} cars"
 
-print "Enter Command: [h (help) | s(show clients) | ss(show smokers) || (update client) | ...]:  "
-cmd = gets.chomp
-
-case cmd
-when 'h'
-  show_help
-when 's'
-  info = company.get_clients.map do |client|
-    "User Name: \"#{client.full_name}\", id: #{client.ins_id}"
-  end
-  puts info
-when 'u'
-  update_user
-when 'ss'
-  smokers = company.get_smokers
-  smokers = company.get_smokers.map do |smoker|
-     "User Name: \"#{smoker.full_name}\", id: #{smoker.ins_id}"
-  end
-  puts smokers
-else
-  show_help
-end
