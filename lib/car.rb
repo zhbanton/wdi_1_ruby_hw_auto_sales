@@ -30,6 +30,5 @@ DEPRECIATION = 0.05
     current_value
   end
 
-
 end
 

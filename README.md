@@ -42,4 +42,7 @@ Think carefully about the order you'll want to build these in. For instance, it 
 ## Extra Challenges
 
 * Add the ability to mark cars as "sold". A sold car no longer contributes to the "lot value", but does contribute to a new "lot revenue" property. Methods on the car lot should allow retrieving either unsold or sold cars. The transition from unsold to sold should be *one-way*.
-* Add an auto-generated unique ID for each car that is 1 higher than the ID of the last car created (starting at 1 for the first car). You'll need to use a class variable for this.
+
+* Add an auto-generated unique ID for each car that is 1 higher than the ID of the last car created (starting at 1 for the first car). You'll need to use a class variable for this.  USE CLASS VARIABLE
+
+split up test files
