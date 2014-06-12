@@ -2,78 +2,43 @@
 
 *"...and if you sign today, we'll throw in an extended warranty!"*
 
-We are going to create a used car lot application that will allow the manager of a used car lot to keep track of their cars.
+In this assignment we'll be writing a collection of Ruby classes for a "car lot" application. We'll be able to create a car lot that contains both new and used cars for sale, and used cars may have damages recorded. We will *not* be writing the application interface itself &ndash; no `puts` or `gets` anywhere in your code. As the developer you can interact with your classes using `binding.pry` and test files.
 
-The manager can use the application to see the value of each car on the lot. Each car's current price, or value, will be calculated by subtracting the below from the car's initial price (MSRP of the car when it was new).
+## Guidelines
 
-* Yearly depreciation
-* Cost reduction based on mileage
-* Amount that the car's current damages would cost to fix
-* *(bonus)* Cost reduction for fixed damages
-
-The user of the application will also be able to set a *price adjustment* on each car to vary the cost of cars. This will typically represent the profit margin but it could be negative if the user so desires.
-
-We strongly recommend pre-populating the lot with a variety of damaged and undamaged cars at the start of your program. 
-You will want to use all the Ruby tools for implementing object-oriented programs:
-
-* Classes
-* Getters and setters (minimize direct access to internal attributes)
-* Instance methods and class methods to define object behavior
-* Private methods where appropriate
-* Class inheritance 
-
-## Sample User Stories
-
-[User Stories](http://www.mountaingoatsoftware.com/agile/user-stories) are often used to break up a development project into manageble tasks. These stories are created and managing within a project team when developers colloborate with "stateholders" or clients.
-
-The below stories are only examples and are not listed in any particular order or priority. You may want to add more to flesh out the functionality of your app, or modify/split these to make them more specific.
-
-* User can see the price of a specific car.
-* User can the total price of all cars on the lot (the "lot value").
-* User can see the total number of cars on the lot.
-* User can add cars to the lot.
-* User can add damages to cars on the lot.
-* User can set price adjustments on cars.
-* User can search for cars by make, model, or year.
-
-## Sample Classes
-
-### Car Lot
-* has a name
-* implements the top-level behaviors specified by the User Stories and Specifications.
-	* Add a car to lot  
-	* Show all cars  
-	* Remove a car from the lot.  
-	* Total the price of all cars.  
-	* Can search for cars by make and/or model and year.  
-
-
-### Car
-* has a make, model, and year of manufacture
-* has a unique vehicle ID number (each new car has an ID one higher than the last) *(bonus)*
-* has an initial price (MSRP when the car was new)
-* has a depreciation rate (how much the value decreases each year)
-
-### Used Car
-* has the same attributes as a new car
-* has a mileage
-* may have one or more damages
-
-### Damage
-* has a description
-* has a cost (how much it would cost to repair)
-* *(bonus)* has a flag indicating whether this damage has been repaired
-* *(bonus)* has a "value penalty" (amount this damage subtracts from the car's value, even if repaired)
+* Write test files for each of your classes in the `bin` directory. Add to and run your test files *frequently* to make sure all the pieces are still working together as you expect.
+* Make frequent, logical, granular Git commits with descriptive messages.
+* Use getters, setters, public methods, and private methods appropriately. Combine methods and use inheritance when needed to avoid duplication of code.
 
 ## Specifications
 
-* Complete car-related functionality (viewing, adding, value calculations, etc.)
-* Complete the car damages-related functionality (viewing, adding, affecting car value, etc.)
-* Appropriate use of class methods *(bonus)*, private methods, and inheritance
-* Repository has several logical commits with descriptive messages
-* Code uses correct indentation/style and descriptive names for classes, methods, and variables
+Think carefully about the order you'll want to build these in. For instance, it might make sense to leave `CarLot` for last, since it needs cars to function.
 
-## Bonuses
+### `CarLot`
+* has a name
+* may have one or more cars
+* can retrieve the "lot value" (total price of all cars on the lot)
+* can retrieve a list of all cars matching a certain make, model, or year
 
-* That'll bump right out! Add the bullet points listed as *(bonus)* above and allow damages to be marked as repaired. If a damage is not repaired, it subtracts **both** its repair cost **and** its "value penalty" from the car's value. If a damage is repaired, only the "value penalty" is subtracted.
-* Add a Command Line Interface *(bonus)* . __Only do this if all other functionality is implemented__
+### `Car`
+* has a make, model, and year of manufacture
+* has an MSRP (original retail price)
+* has a depreciation rate (how much the value decreases each year)
+* has a value (MSRP modified by the depreciation rate, taking the year of manufacture into account)
+* has a manager markup
+* has a price (value modified by the manager markup)
+
+### `UsedCar`
+* has the same attributes as a new car
+* has a mileage
+* may have one or more damages (scuffed paint, missing hubcaps, etc.)
+* has a value (same calculation as a new car, but with the repair cost of all current damages subtracted)
+
+### `Damage`
+* has a description
+* has a cost (how much it would cost to repair)
+
+## Extra Challenges
+
+* Add the ability to mark cars as "sold". A sold car no longer contributes to the "lot value", but does contribute to a new "lot revenue" property. Methods on the car lot should allow retrieving either unsold or sold cars. The transition from unsold to sold should be *one-way*.
+* Add an auto-generated unique ID for each car that is 1 higher than the ID of the last car created (starting at 1 for the first car). You'll need to use a class variable for this.
