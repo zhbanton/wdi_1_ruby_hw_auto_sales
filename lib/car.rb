@@ -18,16 +18,16 @@ DEPRECIATION = 0.05
     @markup = markup
   end
 
-  def purchase_price
-    @msrp + @markup
-  end
-
   def value
-    current_value = purchase_price
+    current_value = @msrp
     (Date.today.year - @year).times do
       current_value -= current_value * DEPRECIATION
     end
     current_value
+  end
+
+  def price
+    value + @markup
   end
 
 end
