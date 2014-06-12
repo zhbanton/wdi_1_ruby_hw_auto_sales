@@ -13,7 +13,7 @@ MILEAGE_DEPRECIATION = (MILEAGE_DEPRECIATION_PERCENTAGE.to_f / MILEAGE_DEPRECIAT
 
 class UsedCar < Car
 
-  def initialize (make, model, year, msrp, mileage, damages, markup: 0)
+  def initialize (make, model, year, msrp, mileage, damages: nil, markup: 0)
     super(make, model, year, msrp, markup: markup)
     @mileage = mileage
     @damages = damages
