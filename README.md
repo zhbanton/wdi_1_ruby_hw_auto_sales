@@ -8,7 +8,7 @@ In this assignment we'll be writing a collection of Ruby classes for a "car lot"
 
 * Write test files for each of your classes in the `bin` directory. Add to and run your test files *frequently* to make sure all the pieces are still working together as you expect.
 * Make frequent, logical, granular Git commits with descriptive messages.
-* Use getters, setters, public methods, and private methods appropriately. Combine methods and use inheritance when needed to avoid duplication of code.
+* Use getters, setters, public methods, private methods, and class constants appropriately. Combine methods and use inheritance when needed to avoid duplication of code.
 
 ## Specifications
 
@@ -23,8 +23,8 @@ Think carefully about the order you'll want to build these in. For instance, it 
 ### `Car`
 * has a make, model, and year of manufacture
 * has an MSRP (original retail price)
-* has a depreciation rate (how much the value decreases each year)
-* has a value (MSRP modified by the depreciation rate, taking the year of manufacture into account)
+* has a value (MSRP modified by depreciation, taking the year of manufacture into account)
+* all cars have a constant depreciation of 5% per year
 * has a manager markup
 * has a price (value modified by the manager markup)
 
@@ -32,7 +32,8 @@ Think carefully about the order you'll want to build these in. For instance, it 
 * has the same attributes as a new car
 * has a mileage
 * may have one or more damages (scuffed paint, missing hubcaps, etc.)
-* has a value (same calculation as a new car, but with the repair cost of all current damages subtracted)
+* has a value (same calculation as a new car, modified by mileage depreciation and the cost of all current damages)
+* all used cars have a constant mileage depreciation of 1% per 10,000 miles (0.0001% per mile)
 
 ### `Damage`
 * has a description
