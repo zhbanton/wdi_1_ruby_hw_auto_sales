@@ -9,7 +9,7 @@ require 'date'
 class Car
 
 DEPRECIATION = 0.05
-@@id_index = 0
+@@id_index = 1
 
 attr_reader :make, :model, :year, :sold
 
