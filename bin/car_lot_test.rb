@@ -10,13 +10,17 @@ cars = [ UsedCar.new("Toyota", "Highlander", 2006, 35000, 100050, damages: [Dama
 lot = CarLot.new("Zack's Lot", cars)
 
 puts lot.inspect
+lot.cars[1].sell
+puts
+puts lot.sold
+puts
+puts lot.unsold
 puts
 puts lot.lot_value
 puts
-puts lot.find_by_any(make: "Toyota", model: "Crv", year: "2012").inspect
+puts lot.lot_revenue
+puts
+puts lot.find_by_any(status: :unsold, make: "Toyota", model: "Crv", year: "2012").inspect
 puts
 puts
-puts lot.find_by_all(make: "Toyota", model: "Highlander").inspect
-
-lot.cars[1].sell
-puts lot.cars[1].inspect
+puts lot.find_by_all(status: :sold, make: "Toyota", model: "Highlander").inspect

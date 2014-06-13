@@ -18,18 +18,55 @@ class CarLot
     @cars = cars
   end
 
+  def unsold
+    @cars.find_all { |car| !car.sold }
+  end
+
+  def sold
+    @cars.find_all { |car| car.sold }
+  end
+
   def lot_value
     value = 0
-    @cars.each { |car| value += car.price if !car.sold }
+    unsold.each { |car| value += car.value }
     value
   end
 
-  def find_by_all(make: nil, model: nil, year: nil)
-    @cars.find_all { |car| (!make || car.make.casecmp(make) == 0) && (!model || car.model.casecmp(model) == 0) && (!year || car.year.to_s.casecmp(year) == 0) }
+  def lot_revenue
+    value = 0
+    sold.each { |car| value += car.value }
+    value
   end
 
-  def find_by_any(make: nil, model: nil, year: nil)
-    @cars.find_all { |car| (!make || car.make.casecmp(make) == 0) || (!model || car.model.casecmp(model) == 0) || (!year || car.year.to_s.casecmp(year) == 0) }
+  # use :sold to search by only sold cars, :unsold for unsold cars, any other value for all cars
+  def find_by_all(status: :all, make: nil, model: nil, year: nil)
+    if status == :sold
+      help_find_by_all(sold, make: make, model: model, year: year)
+    elsif status == :unsold
+      help_find_by_all(unsold, make: make, model: model, year: year)
+    else
+      help_find_by_all(@cars, make: make, model: model, year: year)
+    end
+  end
+
+  def find_by_any(status: :all, make: nil, model: nil, year: nil)
+    if status == :sold
+      help_find_by_any(sold, make: make, model: model, year: year)
+    elsif status == :unsold
+      help_find_by_any(unsold, make: make, model: model, year: year)
+    else
+      help_find_by_any(@cars, make: make, model: model, year: year)
+    end
+  end
+
+  private
+
+  def help_find_by_all(carset, make: nil, model: nil, year: nil)
+    carset.find_all { |car| (!make || car.make.casecmp(make) == 0) && (!model || car.model.casecmp(model) == 0) && (!year || car.year.to_s.casecmp(year) == 0) }
+  end
+
+  def help_find_by_any(carset, make: nil, model: nil, year: nil)
+    carset.find_all { |car| (!make || car.make.casecmp(make) == 0) || (!model || car.model.casecmp(model) == 0) || (!year || car.year.to_s.casecmp(year) == 0) }
   end
 
 end
