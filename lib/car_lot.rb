@@ -3,9 +3,15 @@
 # can retrieve the "lot value" (total price of all cars on the lot)
 # can retrieve a list of all cars matching a certain make, model, or year
 
+# Add the ability to mark cars as "sold". A sold car no longer contributes to the "lot value", but does contribute to a new "lot revenue" property. Methods on the car lot should allow retrieving either unsold or sold cars. The transition from unsold to sold should be one-way.
+
+# Add an auto-generated unique ID for each car that is 1 higher than the ID of the last car created (starting at 1 for the first car). You'll need to use a class variable for this.
+
 require_relative 'used_car.rb'
 
 class CarLot
+
+  attr_reader :cars
 
   def initialize(name, cars)
     @name = name
@@ -14,7 +20,7 @@ class CarLot
 
   def lot_value
     value = 0
-    @cars.each { |car| value += car.price }
+    @cars.each { |car| value += car.price if !car.sold }
     value
   end
 

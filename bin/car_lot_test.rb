@@ -17,3 +17,6 @@ puts lot.find_by_any(make: "Toyota", model: "Crv", year: "2012").inspect
 puts
 puts
 puts lot.find_by_all(make: "Toyota", model: "Highlander").inspect
+
+lot.cars[1].sell
+puts lot.cars[1].inspect
