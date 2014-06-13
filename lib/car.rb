@@ -9,6 +9,7 @@ require 'date'
 class Car
 
 DEPRECIATION = 0.05
+@@id_index = 0
 
 attr_reader :make, :model, :year, :sold
 
@@ -19,6 +20,8 @@ attr_reader :make, :model, :year, :sold
     @msrp = msrp
     @markup = markup
     @sold = false
+    @id = @@id_index
+    @@id_index += 1
   end
 
   def value
